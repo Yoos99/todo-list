@@ -17,9 +17,14 @@ export default function InputField({ setList }) {
       document.querySelector('tripInput').focus();
       return;
     }
-    setList((prev) => [inputText, ...prev]);
+    setList((prev) => {
+      const newList = [inputText, ...prev];
+      localStorage.setItem('tripLists', JSON.stringify(newList));
+      return newList;
+    });
+
     setInputText('');
-    document.querySelector('tripInput').focus();
+    document.querySelector('.tripInput').focus();
   };
 
   const handleKeyUp = (e) => {
@@ -31,6 +36,7 @@ export default function InputField({ setList }) {
   return (
     <div className="IninputField mw">
       <input
+        className="tripInput"
         value={inputText}
         type="text"
         placeholder="여행지를 입력해주세요."
@@ -38,8 +44,7 @@ export default function InputField({ setList }) {
         onKeyUp={handleKeyUp}
       />
       <button onClick={addItem}>
-        검색
-        {/* <i className="fa-solid fa-plus"></i> */}
+        <i className="fa-solid fa-plus"></i>
       </button>
     </div>
   );

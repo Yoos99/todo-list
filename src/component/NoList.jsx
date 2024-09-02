@@ -4,7 +4,7 @@ export default function NoList() {
   return (
     <div className="no-list mw">
       <i className="fa-solid fa-file-excel"></i>
-      <span>할 일이 없습니다.</span>
+      <span>등록된 리스트가 없습니다.</span>
     </div>
   );
 }

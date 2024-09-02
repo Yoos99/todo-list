@@ -8,14 +8,25 @@ import NoList from './component/NoList';
 import TotalCount from './component/TotalCount';
 
 function App() {
-  const data = ['부산', '경주', '울산'];
+  // const data = [
+  // 	"송도센터럴파크",
+  // 	"파주 프로방스 / 헤이리 마을",
+  // 	"춘천 소양강 스카이워크",
+  // 	"포천 가평 레일바이크",
+  // 	"용인 에버랜드",
+  // ];
+  const data = JSON.parse(localStorage.getItem('tripLists')) || [];
   let [lists, setList] = useState(data);
   return (
     <>
       <Header />
       <InputField setList={setList} />
       <TotalCount list={lists} />
-      {lists.length > 0 ? <PostList lists={lists} /> : <NoList />}
+      {lists.length > 0 ? (
+        <PostList lists={lists} setList={setList} />
+      ) : (
+        <NoList />
+      )}
     </>
   );
 }
