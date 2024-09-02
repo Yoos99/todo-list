@@ -1,0 +1,19 @@
+.header {
+  background-color: black;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header i {
+  color: #5e60ce;
+  transform: rotate(-45deg) scale(0.75);
+}
+
+.header strong:nth-of-type(1) {
+  color: #4ea8de;
+}
+.header strong:nth-of-type(2) {
+  color: #1e6f9f;
+}
