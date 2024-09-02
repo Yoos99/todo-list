@@ -1,0 +1,54 @@
+.IninputField {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(-50%);
+}
+
+.IninputField > * {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.IninputField input {
+  flex: 1;
+  background-color: #262626;
+}
+
+.IninputField input:focus {
+  background-color: #ffffff;
+  color: black;
+}
+
+.IninputField button {
+  padding-right: 2.5rem;
+  background-color: #1e6f9f;
+  color: white;
+  cursor: pointer;
+}
+
+.IninputField button:after {
+  /* content: '+'; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.IninputField button:hover {
+  background-color: #4ea8de;
+  color: white;
+}
+
+.IninputField button:focus {
+  transform: translateY(5px);
+}
